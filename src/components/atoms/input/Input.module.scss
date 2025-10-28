@@ -1,0 +1,30 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  // margin-bottom: $spacing-lg;
+  
+}
+
+.label {
+  font-size: $font-size-sm;
+  color: $color-text;
+  margin-bottom: $spacing-xs;
+  font-weight: $font-weight-medium;
+}
+
+.input {
+  @include input-base;
+}
+
+.errorInput {
+  border-color: $color-error;
+}
+
+.error {
+  color: $color-error;
+  font-size: $font-size-sm;
+  margin-top: $spacing-xs;
+}

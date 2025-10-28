@@ -1,0 +1,119 @@
+@use "../../styles/variables" as *;
+
+.navbar {
+  // Desktop Base Styles
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md $spacing-lg;
+  background-color: $color-primary;
+  box-shadow: $shadow-sm;
+  color: $color-background; 
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
+  flex-wrap: nowrap; // Prevents desktop items from wrapping
+}
+
+.logoLink {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-background;
+  text-decoration: none;
+}
+
+.menuToggle {
+  // Hidden by default on screens wider than $breakpoint-md
+  display: none; 
+}
+
+.navLinks {
+  // Desktop Layout
+  display: flex; 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: $spacing-lg;
+  transition: all 0.3s ease-out;
+}
+
+.navLink {
+  color: $color-background;
+  text-decoration: none;
+  padding: $spacing-sm $spacing-xs;
+  font-weight: $font-weight-medium;
+  transition: color 0.2s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+.badge {
+  background-color: #ff4444;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+  display: inline-block;
+}
+
+// ==========================================================
+// MOBILE/TABLET STYLES (Applies to screens 992px wide and smaller)
+// ==========================================================
+
+@media (max-width: $breakpoint-md) {
+  .navbar {
+    // Allows the menu toggle and logo to stay on one line, and the links to wrap below
+    flex-wrap: wrap; 
+  }
+
+  .menuToggle {
+    // Show the toggle button on mobile
+    display: block; 
+    order: 2; // Keep it on the right
+  }
+  
+  .logo {
+    order: 1; // Keep the logo on the left
+  }
+
+  .navLinks {
+    // Mobile Layout: Full width, stacked vertically, and hidden by default
+    order: 3; // Forces the links to the next line
+    flex-direction: column; 
+    width: 100%;
+    
+    // Collapsible Menu Technique:
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    background-color: rgba($color-primary-hover, 0.95); 
+
+    &.open {
+      // Reveals the menu when 'isOpen' state is true
+      max-height: 500px; 
+      padding: $spacing-md 0;
+    }
+  }
+
+  .navLink {
+    display: block; 
+    padding: $spacing-sm $spacing-lg;
+    color: $color-background;
+
+    &:hover {
+      background-color: $color-primary-hover;
+      color: $color-secondary;
+    }
+  }
+}

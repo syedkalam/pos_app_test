@@ -1,0 +1,29 @@
+@use "variables" as *;
+@mixin button-base {
+  border: none;
+  border-radius: $border-radius-md;
+  font-weight: $font-weight-medium;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: $font-family-base;
+}
+
+// Input base
+@mixin input-base {
+  padding: $spacing-md $spacing-lg;
+  font-size: $font-size-md;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+  outline: none;
+  font-family: $font-family-base;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 2px rgba($color-primary, 0.15);
+  }
+}

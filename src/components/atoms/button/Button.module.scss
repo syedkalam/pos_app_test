@@ -1,0 +1,45 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.button {
+  @include button-base;
+}
+
+.sm { padding: $spacing-sm $spacing-md; font-size: $font-size-sm; }
+.md { padding: $spacing-md $spacing-lg; font-size: $font-size-md; }
+.lg { padding: $spacing-lg $spacing-xl; font-size: $font-size-lg; }
+
+.fullWidth { width: 100%; }
+
+.primary {
+  background: $color-primary;
+  color: $color-background;
+  &:hover:not(:disabled) { background: $color-primary-hover; }
+}
+
+.secondary {
+  background: $color-secondary;
+  color: $color-background;
+  &:hover:not(:disabled) { background: $color-secondary-hover; }
+}
+
+.outline {
+  background: transparent;
+  color: $color-primary;
+  border: 1px solid $color-primary;
+  &:hover:not(:disabled) {
+    background: $color-primary;
+    color: $color-background;
+  }
+}
+
+.danger {
+  background: $color-danger;
+  color: $color-background;
+  &:hover:not(:disabled) { background: $color-danger-hover; }
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

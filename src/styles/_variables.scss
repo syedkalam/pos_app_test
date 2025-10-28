@@ -1,0 +1,46 @@
+//  Color Palette
+$color-primary: #007bff;
+$color-primary-hover: #0069d9;
+$color-secondary: #6c757d;
+$color-secondary-hover: #5a6268;
+$color-danger: #dc3545;
+$color-danger-hover: #b52a37;
+$color-border: #ccc;
+$color-text: #333;
+$color-muted: #888;
+$color-background: #fff;
+$color-error: #dc3545;
+
+//  Typography
+$font-family-base: 'Inter', 'Segoe UI', sans-serif;
+$font-size-sm: 0.85rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.1rem;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+
+//  Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 24px;
+
+//  Border & Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+//  Shadows
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+
+//  Breakpoints
+$breakpoint-xs: 576px; // Extra Small (e.g., small phones)
+$breakpoint-sm: 768px; // Small (e.g., standard phones / portrait tablets)
+$breakpoint-md: 992px; // Medium (e.g., landscape tablets / small laptops)
+$breakpoint-lg: 1200px; // Large (e.g., desktop monitors)
+$breakpoint-xl: 1400px; // Extra Large (e.g., wide desktop monitors)

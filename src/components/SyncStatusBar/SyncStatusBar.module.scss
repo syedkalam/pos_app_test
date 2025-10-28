@@ -1,0 +1,160 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+
+  &.offline {
+    background: #ffe0e0;
+    border-bottom-color: #ffcccc;
+  }
+
+  &.syncing {
+    background: #e3f2fd;
+    border-bottom-color: #bbdefb;
+  }
+
+  &.pending {
+    background: #fff9e0;
+    border-bottom-color: #fff3cc;
+  }
+
+  &.synced {
+    background: #e8f5e9;
+    border-bottom-color: #c8e6c9;
+  }
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+
+  .offline & {
+    background: #f44336;
+    animation: none;
+  }
+
+  .syncing & {
+    background: #2196f3;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  .pending & {
+    background: #ff9800;
+  }
+
+  .synced & {
+    background: #4caf50;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.text {
+  font-weight: 500;
+  color: #333;
+}
+
+.lastSync {
+  color: #666;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.syncButton {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: #999;
+    color: #333;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  svg {
+    animation: rotate 2s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.progressContainer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px 16px;
+  z-index: 10;
+}
+
+.entityProgress {
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.entityName {
+  font-size: 12px;
+  color: #666;
+  text-transform: capitalize;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.progressBar {
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #2196f3;
+  transition: width 0.3s ease;
+}
